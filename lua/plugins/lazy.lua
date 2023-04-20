@@ -26,12 +26,15 @@ require('lazy').setup({
 
     -- LSP
     {
-        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        dependencies = {
+            "williamboman/mason.nvim",
+            "neovim/nvim-lspconfig",
+            "hrsh7th/nvim-cmp",
+            "hrsh7th/cmp-nvim-lsp",
+        },
         build = ":MasonUpdate",
     },
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-    "hrsh7th/nvim-cmp",
 
 	-- color theme
 	{ 

@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.showmode = false
 
-opt.cursorlineopt = "number" 
+opt.cursorlineopt = "number"
 
 opt.tabstop = 4
 opt.shiftwidth = 4
