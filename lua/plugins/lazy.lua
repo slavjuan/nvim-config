@@ -21,6 +21,18 @@ require('lazy').setup({
 		build = ":TSUpdate",
 	},
 
+	-- Sidebar
+	"nvim-tree/nvim-tree.lua",
+
+    -- LSP
+    {
+        "williamboman/mason.nvim",
+        build = ":MasonUpdate",
+    },
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    "hrsh7th/nvim-cmp",
+
 	-- color theme
 	{ 
 		'rose-pine/neovim', 
