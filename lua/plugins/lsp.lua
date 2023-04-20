@@ -1,4 +1,5 @@
 
+
 local cmp = require("cmp")
 local servers = {
     "lua_ls",
@@ -11,9 +12,21 @@ require("mason-lspconfig").setup({
 })
 
 cmp.setup({
+    snippet = {
+       expand = function(args)
+           vim.fn["vsnip#anonymous"](args.body)
+       end,
+    },
     sources = cmp.config.sources({
-        { name = "nvim_lsp" }
-    })
+        { name = "nvim_lsp" },
+        { name = 'vsnip' },
+    }),
+    mapping = {
+        ['<S-Space>'] = cmp.mapping.complete(),
+        ["<S-p>"] = cmp.mapping.select_prev_item(),
+		["<S-n>"] = cmp.mapping.select_next_item(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
 })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()

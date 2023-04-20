@@ -2,6 +2,7 @@
 require("nvim-tree").setup({
     filters = {
         dotfiles = true,
+
     },
     actions = {
         open_file = {
@@ -15,8 +16,8 @@ require("nvim-tree").setup({
     view = {
         side = "left",
         width = 35,
-    }, 
+    },
     git = {
         enable = false,
     },
-}) 
+})
