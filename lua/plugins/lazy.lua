@@ -20,6 +20,10 @@ require('lazy').setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 	},
+    "nvim-treesitter/nvim-treesitter-context",
+
+    -- git
+    "f-person/git-blame.nvim",
 
 	-- Sidebar
 	"nvim-tree/nvim-tree.lua",
@@ -38,18 +42,28 @@ require('lazy').setup({
         build = ":MasonUpdate",
     },
 
-	-- color theme
-	{ 
-		'rose-pine/neovim', 
-		name = 'rose-pine',
+	-- ui theme
+	{
+        "rose-pine/neovim",
+        name = "rose-pine",
 		config = function()
 			require("rose-pine").setup({
-				variant = 'moon',
-				disable_background = true,	
+				variant = "moon",
+				disable_background = true,
 				disable_float_background = true,
 			})
 
 			vim.cmd("colorscheme rose-pine")
 		end
-	}
+	},
+    {
+        "nvim-lualine/lualine.nvim",
+        config = function() 
+            require("lualine").setup({
+                options = {
+                    theme = "rose-pine",
+                },
+            })
+        end,
+    }
 })

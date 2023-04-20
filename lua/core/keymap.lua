@@ -3,6 +3,10 @@ local map = vim.keymap.set
 
 vim.g.mapleader = " "
 
+-- vim 
+map("n", "<S-l>", "<cmd>bnext<CR>")
+map("n", "<S-h>", "<cmd>bprev<CR>")
+
 -- tree
 map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
 
