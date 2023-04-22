@@ -22,9 +22,8 @@ cmp.setup({
         { name = 'vsnip' },
     }),
     mapping = {
-        ['<S-Space>'] = cmp.mapping.complete(),
-        ["<S-p>"] = cmp.mapping.select_prev_item(),
-		["<S-n>"] = cmp.mapping.select_next_item(),
+        ["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<C-n>"] = cmp.mapping.select_next_item(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
 })
