@@ -42,6 +42,12 @@ require('lazy').setup({
         build = ":MasonUpdate",
     },
 
+    -- IDE
+    {
+        "windwp/nvim-autopairs",
+        config = true,
+    },
+
 	-- ui theme
 	{
         "rose-pine/neovim",
