@@ -4,8 +4,8 @@ local map = vim.keymap.set
 vim.g.mapleader = " "
 
 -- nvim
-map({ "n", "i" }, "<M-j>", "<cmd>m+<CR>")
-map({ "n", "i" }, "<M-k>", "<cmd>m-2<CR>")
+-- map({ "n", "i" }, "<M-j>", "<cmd>m+<CR>")
+-- map({ "n", "i" }, "<M-k>", "<cmd>m-2<CR>")
 
 -- tree
 map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
