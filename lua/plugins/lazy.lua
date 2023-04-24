@@ -47,6 +47,10 @@ require('lazy').setup({
         "windwp/nvim-autopairs",
         config = true,
     },
+    {
+        "numtostr/comment.nvim",
+        config = true,
+    },
 
 	-- ui theme
 	{

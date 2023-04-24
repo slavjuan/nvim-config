@@ -4,6 +4,8 @@ local cmp = require("cmp")
 local servers = {
     "lua_ls",
 	"rust_analyzer",
+    "markdown",
+    "html",
 }
 
 require("mason").setup()
