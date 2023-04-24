@@ -6,6 +6,7 @@ local servers = {
 	"rust_analyzer",
     "tsserver",
     "eslint",
+    "emmet_ls",
     "html",
 }
 
