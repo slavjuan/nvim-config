@@ -4,6 +4,8 @@ local cmp = require("cmp")
 local servers = {
     "lua_ls",
 	"rust_analyzer",
+    "tsserver",
+    "eslint",
     "html",
 }
 

@@ -5,6 +5,8 @@ require('nvim-treesitter.configs').setup({
 		"rust",
         "html",
         "markdown",
+        "typescript",
+        "javascript",
 	},
 	sync_install = false,
 	auto_install = true,
