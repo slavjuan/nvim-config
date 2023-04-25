@@ -2,7 +2,7 @@
 require("nvim-tree").setup({
     filters = {
         dotfiles = true,
-
+        custom = { "target" },
     },
     actions = {
         open_file = {

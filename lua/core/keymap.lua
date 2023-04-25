@@ -4,6 +4,8 @@ local map = vim.keymap.set
 vim.g.mapleader = " "
 
 -- nvim
+map("n", "<C-l>", "<cmd>bnext<CR>")
+map("n", "<C-h>", "<cmd>bprev<CR>")
 -- map({ "n", "i" }, "<M-j>", "<cmd>m+<CR>")
 -- map({ "n", "i" }, "<M-k>", "<cmd>m-2<CR>")
 

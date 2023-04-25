@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 opt.showmode = false
+opt.termguicolors = true
 
 opt.cursorlineopt = "number"
 
