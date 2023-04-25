@@ -54,16 +54,20 @@ require('lazy').setup({
 
 	-- ui theme
 	{
-        "rose-pine/neovim",
-        name = "rose-pine",
+        "ellisonleao/gruvbox.nvim",
+        name = "gruvbox",
 		config = function()
-			require("rose-pine").setup({
-				variant = "moon",
-				disable_background = true,
-				disable_float_background = true,
+			require("gruvbox").setup({
+                italic = {
+                    strings = false,
+                    comments = false,
+                    operators = false,
+                    folds = false,
+                },
+                transparent_mode = true,
 			})
 
-			vim.cmd("colorscheme rose-pine")
+			vim.cmd("colorscheme gruvbox")
 		end
 	},
     {
@@ -71,7 +75,7 @@ require('lazy').setup({
         config = function() 
             require("lualine").setup({
                 options = {
-                    theme = "rose-pine",
+                    theme = "gruvbox",
                 },
             })
         end,
