@@ -3,6 +3,7 @@ require("nvim-tree").setup({
     filters = {
         dotfiles = true,
         custom = { "target" },
+        exclude = { ".gitignore" },
     },
     actions = {
         open_file = {
