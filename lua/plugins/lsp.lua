@@ -30,6 +30,9 @@ cmp.setup({
 		["<C-n>"] = cmp.mapping.select_next_item(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
+    experimental = {
+        ghost_text = true,
+    },
 })
 
 local opts = { noremap = true, silent = true }
