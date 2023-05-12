@@ -31,7 +31,7 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     experimental = {
-        ghost_text = true,
+        -- ghost_text = true,
     },
 })
 

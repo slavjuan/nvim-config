@@ -51,6 +51,10 @@ require('lazy').setup({
         "numtostr/comment.nvim",
         config = true,
     },
+    {
+        "akinsho/toggleterm.nvim",
+        config = true,
+    },
 
 	-- ui theme
 	{
