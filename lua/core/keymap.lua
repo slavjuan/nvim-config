@@ -9,6 +9,9 @@ map("n", "<C-h>", "<cmd>bprev<CR>")
 -- map({ "n", "i" }, "<M-j>", "<cmd>m+<CR>")
 -- map({ "n", "i" }, "<M-k>", "<cmd>m-2<CR>")
 
+-- terminal
+map({ "n", "t" }, "<C-t>", "<cmd>ToggleTerm<CR>")
+
 -- tree
 map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
 
