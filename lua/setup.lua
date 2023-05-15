@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope.nvim",
+    "nvim-telescope/telescope-live-grep-args.nvim",
 
 	-- Treesitter
 	{
