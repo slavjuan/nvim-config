@@ -28,6 +28,7 @@ require('lazy').setup({
 
 	-- Sidebar
 	"nvim-tree/nvim-tree.lua",
+    "nvim-tree/nvim-web-devicons",
 
     -- LSP
     {
