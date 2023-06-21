@@ -1,4 +1,5 @@
 
 require("toggleterm").setup({
-    shell =  "powershell",
+    direction = "float",
+    shell = "powershell",
 })
