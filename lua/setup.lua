@@ -46,11 +46,11 @@ require('lazy').setup({
 
     -- IDE
     {
-        "windwp/nvim-autopairs",
-        config = true,
+        "folke/trouble.nvim",
+        config=true,
     },
     {
-        "numtostr/comment.nvim",
+        "windwp/nvim-autopairs",
         config = true,
     },
     {
@@ -58,22 +58,22 @@ require('lazy').setup({
         config = true,
     },
 
-	-- ui theme
-	{
-        "ellisonleao/gruvbox.nvim",
-        name = "gruvbox",
-		config = function()
-			require("gruvbox").setup({
-                italic = {
-                    strings = false,
-                    comments = false,
-                    operators = false,
-                    folds = false,
+    -- ui theme
+    {
+        "EdenEast/nightfox.nvim",
+        name = "nightfox",
+        lazy = false,
+        config = function()
+            require("nightfox").setup({
+                options = {
+                    transparent=true,
+                    modules = {
+                        telescope = true,
+                    }
                 },
-                transparent_mode = true,
 			})
 
-			vim.cmd("colorscheme gruvbox")
+			vim.cmd("colorscheme nightfox")
 		end
 	},
     {
@@ -81,7 +81,7 @@ require('lazy').setup({
         config = function() 
             require("lualine").setup({
                 options = {
-                    theme = "gruvbox",
+                    theme = "nightfox",
                 },
             })
         end,
