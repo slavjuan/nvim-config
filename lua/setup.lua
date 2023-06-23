@@ -12,23 +12,30 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-	"nvim-lua/plenary.nvim",
-	"nvim-telescope/telescope.nvim",
-    "nvim-telescope/telescope-live-grep-args.nvim",
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-live-grep-args.nvim",
+        },
+    },
 
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 	},
-    "nvim-treesitter/nvim-treesitter-context",
 
     -- git
     "f-person/git-blame.nvim",
 
-	-- Sidebar
-	"nvim-tree/nvim-tree.lua",
-    "nvim-tree/nvim-web-devicons",
+    -- Sidebar
+    {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        }
+    },
 
     -- LSP
     {
@@ -42,6 +49,7 @@ require('lazy').setup({
             "hrsh7th/cmp-vsnip",
             "hrsh7th/cmp-path",
             "hrsh7th/vim-vsnip",
+            "jose-elias-alvarez/null-ls.nvim",
         },
         build = ":MasonUpdate",
     },
@@ -63,6 +71,17 @@ require('lazy').setup({
         "lukas-reineke/indent-blankline.nvim",
         opts = {
             show_end_of_line = false,
+        },
+    },
+    {
+        "utilyre/barbecue.nvim",
+        name="barbecue",
+        dependencies = {
+           "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons",
+        },
+        opts = {
+            theme = "carbonfox",
         },
     },
 

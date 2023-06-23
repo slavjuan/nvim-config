@@ -33,7 +33,7 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     experimental = {
-        -- ghost_text = true,
+        ghost_text = true,
     },
 })
 
@@ -54,3 +54,7 @@ for _, lsp in pairs(servers) do
         capabilities = capabilities,
 	})
 end
+
+require("null-ls").setup({
+    on_attach=on_attach,
+})
