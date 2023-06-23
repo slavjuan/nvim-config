@@ -37,8 +37,10 @@ require('lazy').setup({
             "williamboman/mason.nvim",
             "neovim/nvim-lspconfig",
             "hrsh7th/nvim-cmp",
+            "hrsh7th/cmp-nvim-lsp-signature-help",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-vsnip",
+            "hrsh7th/cmp-path",
             "hrsh7th/vim-vsnip",
         },
         build = ":MasonUpdate",
@@ -68,12 +70,15 @@ require('lazy').setup({
                 options = {
                     transparent=true,
                     modules = {
-                        telescope = true,
+                        diagnostic = {
+                            background=false,
+                        },
                     }
                 },
 			})
 
-			vim.cmd("colorscheme nightfox")
+			vim.cmd("colorscheme carbonfox")
+            
 		end
 	},
     {
@@ -81,7 +86,7 @@ require('lazy').setup({
         config = function() 
             require("lualine").setup({
                 options = {
-                    theme = "nightfox",
+                    theme = "carbonfox",
                 },
             })
         end,

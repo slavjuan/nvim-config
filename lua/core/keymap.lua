@@ -7,9 +7,6 @@ vim.g.mapleader = " "
 map("n", "<C-l>", "<cmd>bnext<CR>")
 map("n", "<C-h>", "<cmd>bprev<CR>")
 
--- jfind
-map("n", "<C-f>", "<cmd>")
-
 -- terminal
 map({ "n", "t" }, "<C-t>", "<cmd>ToggleTerm<CR>")
 
