@@ -7,10 +7,10 @@ return {
         "nvim-tree/nvim-web-devicons",
         lazy = true,
     },
-    {
-        "SmiteshP/nvim-navic",
-        lazy = true,
-    },
+    -- {
+        -- "SmiteshP/nvim-navic",
+        -- lazy = true,
+    -- },
     {
         "jiangmiao/auto-pairs",
     },
