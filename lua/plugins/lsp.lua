@@ -44,7 +44,7 @@ return {
             local opts = { buffer = bufnr, remap = false }
 
             if client.server_capabilities.documentSymbolProvider then
-                require("nvim-navic").attach(client, bufnr)
+                -- require("nvim-navic").attach(client, bufnr)
             end
 
             vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
