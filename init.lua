@@ -1,5 +1,6 @@
+vim.g.mapleader = " "
 
--- lua modules
 require("core")
-require("setup")
-require("plugins")
+require("loader")
+
+vim.cmd.colorscheme("carbonfox")

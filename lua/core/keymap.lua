@@ -1,20 +1,19 @@
+-- NORMAL
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-local map = vim.keymap.set
+-- -- Telescope
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
 
-vim.g.mapleader = " "
+-- -- NvimTree
+vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
 
--- nvim
-map("n", "<C-l>", "<cmd>bnext<CR>")
-map("n", "<C-h>", "<cmd>bprev<CR>")
+-- -- Fugitive
+vim.keymap.set("n", "<leader>gg", "<cmd>G<CR>")
 
--- terminal
-map({ "n", "t" }, "<C-t>", "<cmd>ToggleTerm<CR>")
+-- VISUAL
+vim.keymap.set("x", "<leader>p", "\"_dp")
 
--- tree
-map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
-
--- telescope
-map("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
-map("n", "<leader>fg", "<cmd>Telescope live_grep_args<CR>")
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
-map("n", "<leader>gs", "<cmd>Telescope git_status<CR>")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

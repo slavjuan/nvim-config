@@ -1,57 +1,55 @@
 
+return {
+    "VonHeikemen/lsp-zero.nvim",
+    dependencies = {
+        -- lsp support
+        "neovim/nvim-lspconfig",
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
 
-local cmp = require("cmp")
-local servers = {
-    "lua_ls",
-	"rust_analyzer",
-    "tsserver",
-    "eslint",
-    "emmet_ls",
-    "html",
+        -- autocompletion
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-nvim-lua",
+
+        -- snippets
+        "L3MON4D3/LuaSnip",
+        "rafamadriz/friendly-snippets",
+    },
+    build = ":MasonUpdate",
+    config = function()
+        local lsp = require("lsp-zero")
+
+        lsp.preset("recommended")
+        lsp.ensure_installed({
+            "rust_analyzer",
+        })
+
+        local cmp = require("cmp")
+        local cmp_mappings = lsp.defaults.cmp_mappings({
+            ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        })
+
+        lsp.set_preferences({
+            sign_icons = { }
+        })
+
+        lsp.setup_nvim_cmp({
+            mapping = cmp_mappings
+        })
+
+        lsp.on_attach(function(client, bufnr)
+            local opts = { buffer = bufnr, remap = false }
+
+            vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+        end)
+
+        lsp.setup()
+
+        vim.diagnostic.config({
+            virtual_text = true,
+        })
+    end,
 }
-
-require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = servers,
-})
-
-cmp.setup({
-    snippet = {
-       expand = function(args)
-           vim.fn["vsnip#anonymous"](args.body)
-       end,
-    },
-    sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "nvim_lsp_signature_help"},
-        { name = "path" },
-        { name = 'vsnip' },
-    }),
-    mapping = {
-        ["<C-p>"] = cmp.mapping.select_prev_item(),
-		["<C-n>"] = cmp.mapping.select_next_item(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    },
-})
-
-local opts = { noremap = true, silent = true }
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-local on_attach = function (client, bufnr)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()")
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()")
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-end
-
-for _, lsp in pairs(servers) do
-	require("lspconfig")[lsp].setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-	})
-end
-
-require("null-ls").setup({
-    on_attach=on_attach,
-})

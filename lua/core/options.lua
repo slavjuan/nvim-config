@@ -1,16 +1,28 @@
-local opt = vim.opt
+vim.opt.nu = true
+vim.opt.relativenumber = true
 
-opt.showmode = false
-opt.termguicolors = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
-opt.cursorlineopt = "number"
+vim.opt.smartindent = true
 
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.expandtab = true
+vim.opt.wrap = false
 
-opt.number = true
-opt.numberwidth = 4
-opt.relativenumber = true
+vim.opt.swapfile = false
+vim.opt.backup = false
 
-opt.autoindent = true
+vim.opt.showmode = false
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
+
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+
+vim.opt.updatetime = 50
+

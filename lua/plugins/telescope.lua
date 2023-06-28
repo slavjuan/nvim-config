@@ -1,9 +1,20 @@
-local telescope = require("telescope")
+return {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+        local builtin = require("telescope.builtin")
 
-telescope.load_extension("live_grep_args")
-telescope.setup({
-	defaults = {
-		file_ignore_patterns = { ".git", "target", "node_modules" },
-	},
-})
-
+        require("telescope").setup({
+            defaults = {
+                file_ignore_patterns = {
+                    ".git",
+                    "node_modules",
+                },
+            },
+            pickers = {
+                find_files = {
+                    hidden = true,
+                },
+            },
+        })
+    end
+}
