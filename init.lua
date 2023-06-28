@@ -3,4 +3,4 @@ vim.g.mapleader = " "
 require("core")
 require("loader")
 
-vim.cmd.colorscheme("carbonfox")
+vim.cmd.colorscheme("nightly")
