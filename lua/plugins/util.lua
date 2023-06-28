@@ -22,9 +22,6 @@ return {
         end,
     },
     {
-        "utilyre/barbecue.nvim"
-    },
-    {
         "akinsho/toggleterm.nvim",
         config = function()
             require("toggleterm").setup({

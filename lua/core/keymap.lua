@@ -2,6 +2,9 @@
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+-- -- Terminal
+vim.keymap.set({"n", "t"}, "<C-t>", "<cmd>ToggleTerm<CR>")
+
 -- -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
